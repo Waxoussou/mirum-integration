@@ -1,6 +1,7 @@
 :root {
     --main-color: #07eeba;
-    --main-bg: #222222
+    --main-bg: #222222;
+    --box-bg: #141d33;
 }
 
 html, body {
@@ -22,18 +23,171 @@ ul, li {
 
 /* HEADER >> Burger Icon */
 
-.burger-icon {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px 440px 200px;
 }
 
-.rec {
-    width: 20px;
-    height: 3px;
-    margin: 3px;
-    border-radius: 3px;
-    background-color: var(--main-color);
+.header-bg-cover {
+    grid-column: 1/ 13;
+    grid-row: 1/ span 2;
+    background-image: url('./TEST-HP-assets/bg-1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-main-content {
+    width: 90%;
+    margin: 0 auto;
+    /* padding-left: 100px;
+    padding-right: 50px; */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px minmax(500px, auto);
+    align-items: center;
+}
+
+.header-bottom {
+    grid-column: 2/12;
+    grid-row: span 2/ -1;
+    z-index: 1;
+    position: relative;
+    align-self: flex-end;
+}
+
+.header-form {
+    background: var(--box-bg);
+    opacity: 95%;
+    color: #e0e5ea;
+    padding: 20px;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* max-width: 400px; */
+    /* position: absolute; */
+    /* top: -400px;
+    bottom: 50px;
+    left: 20px;
+    right: 20px; */
+    /* grid-column: span 4; */
+    /* height: 440px; */
+    /* grid-row: 2; */
+    /* position: relative;
+    bottom: 100px; */
+}
+
+.box-title {
+    font-weight: lighter;
+    font-size: 3em;
+}
+
+.header-form p {
+    font-size: 1.2em;
+}
+
+.header-form form {
+    margin-bottom: 40px;
+}
+
+.header-form form input {
+    border: none;
+    background-color: var(--box-bg);
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.251);
+    /* line-height: 1.2; */
+    text-align: left;
+}
+.header-form form input:focus{
+    outline: none;
+}
+.custom-input {
+    position: relative;
+}
+
+.custom-input::before {
+    content: '';
+    background-color: #0a459a;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+}
+
+.submit-button {
+    position: absolute;
+    /* display: flex;
+    justify-content: center; */
+    bottom: -70px;
+    left: 45%;
+    right: 45%;
+    /* background-color: var(--main-color); */
+    height: 50px;
+}
+
+.circle {
+    width: 50px;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--main-color);
+}
+
+.logo {
+    grid-column: span 5;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 319px;
+    max-height: 46px;
+}
+
+nav {
+    grid-column: span 5;
+}
+
+nav ul {
+    color: #e0e5ea;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-btn {
+    justify-self: end;
+    grid-column: span 2;
+    min-width: 100%;
+}
+
+.nav-btn button {
+    width: 100%;
+    border: none;
+    color: #e0e5ea;
+    padding: auto;
+    background: #07eeba;
+    border-radius: 20px;
+}
+
+.header-title {
+    color: #e0e5ea;
+    grid-column: 9/13;
+    grid-row: 2;
+    justify-self: flex-end;
+}
+
+.burger-icon {
+    display: none;
+}
+
+/**
+* MAIN CONTAINER 
+*/
+
+.main-container {
+    height: 500px;
 }
 
 /**
@@ -45,14 +199,16 @@ footer {
 }
 
 footer>* {
-    padding: 0 100px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 footer .links {
     background: #e0e5ea;
     height: 290px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -65,5 +221,46 @@ footer .bottom {
     height: 72px;
     font-size: 22px;
     color: rgb(255, 255, 255);
-    line-height: 2.182;
+    /* line-height: 2.182; */
+}
+
+@media screen and (max-width: 620px) {
+    .logo, nav, .nav-btn, .header-title {
+        display: none;
+    }
+    .burger-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .rec {
+        width: 20px;
+        height: 3px;
+        margin: 3px;
+        border-radius: 3px;
+        background-color: var(--main-color);
+    }
+    .links li, footer .bottom {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .header-form {
+        left: 100px;
+        padding: 50px;
+    }
+    .header-bottom {
+        grid-column: 2/ 8;
+    }
+}
+
+@media screen and (min-width: 1069px) {
+    .header-title {
+        grid-column: 7/13;
+    }
+    .header-bottom {
+        grid-column: 2/ 6;
+    }
 }
