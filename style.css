@@ -207,7 +207,7 @@ nav ul {
     flex-shrink: 0;
     width: 100%;
     max-width: 600px;
-    margin-right: 40px;
+    /* margin-right: 40px; */
 }
 
 .card-img-container {
@@ -260,6 +260,7 @@ nav ul {
     flex-direction: column;
     align-items: center;
     background: radial-gradient(ellipse at top, #092342, #04050d), radial-gradient(ellipse at bottom, #092342, transparent);
+    /* background: radial-gradient(ellipse at top, #092342, #04050d), radial-gradient(ellipse at bottom, #092342, transparent); */
 }
 
 .section3 .content-bloc {
@@ -297,13 +298,13 @@ nav ul {
     object-fit: cover;
 }
 
-.satt-bg{
+.satt-bg {
     position: relative;
     height: 500px;
     width: 100%;
     background-image: url('./TEST-HP-assets//section3-bg.png');
-    background-size:cover;
-    opacity: .5;
+    background-size: cover;
+    opacity: .7;
 }
 
 /**
@@ -382,7 +383,7 @@ footer .bottom {
     .section1 {
         overflow: unset;
         display: grid;
-        column-gap: 20px;
+        column-gap: 30px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         width: 90%;
@@ -392,6 +393,7 @@ footer .bottom {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        justify-self: center;
     }
     .card-title {
         grid-row: 2;
@@ -422,6 +424,56 @@ footer .bottom {
         left: unset;
         width: 32px;
         height: 55%;
+    }
+    /* SECTION 2 */
+    .section2 {
+        display: block;
+        width: 100%;
+        height: 700px;
+        background: linear-gradient(141deg, #070762, #5a56cc, #10dbdb);
+    }
+    /* SECTION 3  */
+    .section3 .section-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .satt-bg {
+        grid-column: 1/3;
+        grid-row: 1/5;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 25% 50%;
+        /* background-position: left; */
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .content-bloc {
+        z-index: 10;
+        grid-column: 2;
+    }
+    .bloc1 {
+        grid-row: 1;
+    }
+    .bloc2 {
+        grid-row: 2;
+    }
+    .bloc3 {
+        grid-row: 3;
+    }
+    .section3 .download-btn {
+        display: unset;
+        grid-row: 4;
+    }
+    .download-btn button {
+        color: #e0e5ea;
+        background: transparent;
+        font-weight: bold;
+        font-size: 22px;
+        border: 3px solid var(--main-color);
+        border-radius: 20px;
+        padding: 10px 15px;
     }
 }
 
