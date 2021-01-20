@@ -27,6 +27,7 @@ header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100px 440px 200px;
+    margin-bottom: 120px;
 }
 
 .header-bg-cover {
@@ -101,9 +102,11 @@ header {
     /* line-height: 1.2; */
     text-align: left;
 }
-.header-form form input:focus{
+
+.header-form form input:focus {
     outline: none;
 }
+
 .custom-input {
     position: relative;
 }
@@ -123,10 +126,11 @@ header {
     /* display: flex;
     justify-content: center; */
     bottom: -70px;
-    left: 45%;
+    left: 42%;
     right: 45%;
     /* background-color: var(--main-color); */
     height: 50px;
+    cursor: pointer;
 }
 
 .circle {
@@ -187,7 +191,119 @@ nav ul {
 */
 
 .main-container {
+    min-height: 500px;
+}
+
+/*  SECTION 1*/
+
+.section1 {
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+.card {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 600px;
+    margin-right: 40px;
+}
+
+.card-img-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-container .card-img:nth-child(even) {
+    align-self: flex-end;
+}
+
+.card-img-container .card-img:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.card-img img {
+    object-fit: contain;
+    height: 100%;
+    width: 300px;
+}
+
+.img1 {
+    position: relative;
+}
+
+.img1::before {
+    content: '';
+    position: absolute;
+    width: 55%;
+    height: 40px;
+    background-color: #07eeba;
+    left: 30px;
+    bottom: -15px;
+}
+
+.card-content {
+    width: 90%;
+}
+
+.card-content p {
+    padding-left: 20%;
+    text-align: end;
+}
+
+/* SECTION 3 */
+
+.section3 .section-content {
+    color: #e0e5ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(ellipse at top, #092342, #04050d), radial-gradient(ellipse at bottom, #092342, transparent);
+}
+
+.section3 .content-bloc {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section3 p, .section3 h1 {
+    color: #e0e5ea;
+    font-weight: lighter;
+    opacity: 80%;
+}
+
+.section3 h1 {
+    font-size: 35px;
+}
+
+.section3 p {
+    font-size: 18px;
+}
+
+.section3 .download-btn {
+    display: none;
+}
+
+.sattelite-bg {
+    width: 100%;
+    overflow: hidden;
+}
+
+.sattelite-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.satt-bg{
+    position: relative;
     height: 500px;
+    width: 100%;
+    background-image: url('./TEST-HP-assets//section3-bg.png');
+    background-size:cover;
+    opacity: .5;
 }
 
 /**
@@ -221,7 +337,7 @@ footer .bottom {
     height: 72px;
     font-size: 22px;
     color: rgb(255, 255, 255);
-    /* line-height: 2.182; */
+    line-height: 2.182;
 }
 
 @media screen and (max-width: 620px) {
@@ -241,8 +357,12 @@ footer .bottom {
         border-radius: 3px;
         background-color: var(--main-color);
     }
-    .links li, footer .bottom {
+    /* .links li, footer .bottom {
         font-size: 14px;
+    }
+    */
+    footer .links {
+        display: none;
     }
 }
 
@@ -253,6 +373,55 @@ footer .bottom {
     }
     .header-bottom {
         grid-column: 2/ 8;
+    }
+    .submit-button {
+        left: unset;
+        bottom: 60px;
+        right: -300px;
+    }
+    .section1 {
+        overflow: unset;
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: 90%;
+        margin: 0 auto;
+    }
+    .section1 .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .card-title {
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: end;
+        margin-right: 30px;
+        text-align: end;
+    }
+    .card-content {
+        grid-row: 2;
+        grid-column: 2;
+    }
+    .section1 .card-img-container {
+        grid-column: span 2;
+        flex-direction: row;
+    }
+    .card-img img {
+        width: 100%;
+        object-fit: contain;
+    }
+    .img1 {
+        position: relative;
+        bottom: 20px;
+    }
+    .img1::before {
+        right: -15px;
+        top: -22px;
+        left: unset;
+        width: 32px;
+        height: 55%;
     }
 }
 
